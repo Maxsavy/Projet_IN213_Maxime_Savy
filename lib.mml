@@ -1,0 +1,17 @@
+let true = fun x -> (fun y -> x) in
+let false = fun x -> (fun y -> y) in
+
+let not = fun b -> b false true in
+let and = fun a -> fun b -> a b false in
+let or = fun a -> fun b -> a true b in
+
+let pair = fun a -> (fun b -> fun c -> (c a) b) in
+let fst = fun p -> p true in
+let snd = fun p -> p false in
+
+let succ = fun n -> fun f -> fun x -> f (n f x) in
+let add = fun m -> fun n -> fun f -> fun x -> m f (n f x) in
+let mul = fun m -> fun n -> fun f -> m (n f) in
+let iszero = fun n -> n (fun x -> false) true in
+
+false;;

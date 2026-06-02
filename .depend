@@ -1,0 +1,34 @@
+lambda.cmo :
+lambda.cmx :
+pcfast.cmo :
+pcfast.cmx :
+pcflex.cmo : \
+    pcfparse.cmi
+pcflex.cmx : \
+    pcfparse.cmx
+pcfloop.cmo : \
+    translate.cmo \
+    pcfparse.cmi \
+    pcflex.cmo \
+    pcfast.cmo \
+    lambda.cmo
+pcfloop.cmx : \
+    translate.cmx \
+    pcfparse.cmx \
+    pcflex.cmx \
+    pcfast.cmx \
+    lambda.cmx
+pcfparse.cmo : \
+    pcfast.cmo \
+    pcfparse.cmi
+pcfparse.cmx : \
+    pcfast.cmx \
+    pcfparse.cmi
+pcfparse.cmi : \
+    pcfast.cmo
+translate.cmo : \
+    pcfast.cmo \
+    lambda.cmo
+translate.cmx : \
+    pcfast.cmx \
+    lambda.cmx
